@@ -18,6 +18,12 @@ Import this repository into an agent supporting Skills, or download [v1.0.0 ZIP]
 
 需要有效 API Key、可用模型与账户额度。安装包不包含生成额度。
 
+**[Get an API Key & purchase credits / 获取 API Key 与购买额度 → tokenhubtop.com](https://tokenhubtop.com/)**
+
+Visit [TokenHubTop](https://tokenhubtop.com/) to register or sign in, obtain your API key, and purchase usage credits. Available models and pricing are shown on the platform.
+
+前往 [TokenHubTop 官网](https://tokenhubtop.com/) 注册或登录，获取 API Key 并购买使用额度。可用模型与价格以平台页面为准。
+
 ## Usage / 使用
 
 Ask your agent to generate a video using this skill, specifying an available model. Direct script usage:
