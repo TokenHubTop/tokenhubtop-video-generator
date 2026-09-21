@@ -41,10 +41,10 @@ See [project format](references/project-format.md). Plan is offline; render subm
 
 详见项目格式说明。任务记录请保存在私有目录；提交结果不确定时先核查平台记录，避免重复扣费。
 
-## Verification / 验证
+## Output / 输出说明
 
-Version 1.0.0. Nine local behavior tests and skill validation passed. Live paid video generation has not yet been verified. Multiple shots are separate assets; automatic editing, stitching, and subtitles are not included.
+Each generation task produces a separate video asset. For a multi-shot project, download the clips and assemble them in your preferred video editor.
 
-已通过本地测试，尚未完成真实付费生成验收。多个镜头分别输出，不包含自动剪辑、拼接或字幕制作。
+每个生成任务输出独立视频。制作多镜头作品时，可下载各段素材，在常用剪辑软件中组合成片。
 
 [Website / 官网](https://tokenhubtop.com/) · [API docs / 接口文档](https://tokenhubtop.com/zh/docs/api/ai-model/videos/createvideogeneration)
