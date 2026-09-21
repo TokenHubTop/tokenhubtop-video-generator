@@ -4,7 +4,52 @@ Generate AI videos from text and reference media through TokenHubTop, with reque
 
 通过 TokenHubTop 生成 AI 视频，支持文字、图片、首尾帧和音视频参考。
 
-## Installation / 安装
+## Quick start / 新手快速开始
+
+### 1. 复制这段话，发给你使用的智能体
+
+适用于支持安装 Skill、执行脚本和联网的智能体。复制下面整段内容即可：
+
+```text
+请帮我安装 TokenHubTop AI Video Generator（视频生成 Skill）。
+GitHub 仓库：https://github.com/TokenHubTop/tokenhubtop-video-generator
+请阅读仓库的 README.md 和 SKILL.md，按当前智能体的技能安装方式完成安装，
+检查 Node.js 22+ 是否可用，并指导我在本机安全配置 TOKENHUBTOP_API_KEY。
+不要让我把完整 API Key 发到聊天里。安装完成后告诉我如何开始生成视频。
+```
+
+For an English-speaking agent, paste:
+
+```text
+Install the TokenHubTop AI Video Generator skill from:
+https://github.com/TokenHubTop/tokenhubtop-video-generator
+Read README.md and SKILL.md, follow this agent's skill installation process,
+check that Node.js 22+ is available, and guide me through configuring
+TOKENHUBTOP_API_KEY securely in my local environment.
+Do not ask me to paste the full API key into chat. Then explain how to generate a video.
+```
+
+安装方式由智能体决定；如果它不能自动安装，请使用下方 ZIP 按该产品的技能安装说明导入。
+
+### 2. 获取 API Key 和使用额度
+
+前往 **[TokenHubTop 官网 → https://tokenhubtop.com/](https://tokenhubtop.com/)** 注册或登录，获取 API Key 并购买使用额度，然后按智能体提示完成配置。生成费用以平台实际规则为准。
+
+### 3. 告诉智能体你想生成什么视频
+
+配置完成后，可以这样说：
+
+```text
+请使用 TokenHubTop 视频生成 Skill，生成一段 5 秒的茶杯产品展示视频：
+竖屏 9:16，暖色自然光，镜头缓慢靠近，茶杯上方有轻柔热气，不要字幕。
+请先让我选择账号可用的视频模型，然后提交生成，完成后帮我下载。
+```
+
+也可以提供产品图片或参考视频，并说明希望保留的外观和动作。素材需要可访问的链接或有效的平台素材库引用。
+
+You can request a video in your own language after setup. Specify an available model and describe the scene; reference media are optional.
+
+## Installation / 其他安装方式
 
 Import this repository into an agent supporting Skills, or download [v1.0.0 ZIP](packages/tokenhubtop-video-generator-1.0.0.zip). Keep SKILL.md at the skill root. Follow your agent's installation instructions.
 
@@ -24,7 +69,7 @@ Visit [TokenHubTop](https://tokenhubtop.com/) to register or sign in, obtain you
 
 前往 [TokenHubTop 官网](https://tokenhubtop.com/) 注册或登录，获取 API Key 并购买使用额度。可用模型与价格以平台页面为准。
 
-## Usage / 使用
+## Script usage / 脚本调用（进阶）
 
 Ask your agent to generate a video using this skill, specifying an available model. Direct script usage:
 
