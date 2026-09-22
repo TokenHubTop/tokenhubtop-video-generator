@@ -1,0 +1,54 @@
+TokenHubTop AI Video Generator Proprietary License
+Version 1.0
+Copyright © 2026 SEASKY INTELLIGENT TECH (HK) LIMITED. All rights reserved.
+TokenHubTop is the brand and service operated by SEASKY INTELLIGENT TECH (HK) LIMITED.
+
+1. License Grant
+Subject to this License and TokenHubTop's applicable terms of service, TokenHubTop grants you a limited, non-exclusive, non-transferable, non-sublicensable, revocable license to download and use this Skill solely for your personal or internal business purposes in connection with TokenHubTop services. You may make a reasonable number of copies solely for installation and backup purposes.
+
+许可授予：在遵守本许可及 TokenHubTop 适用服务条款的前提下，TokenHubTop 授予你一项有限的、非排他的、不可转让、不可再许可且可撤销的许可，仅用于与你使用 TokenHubTop 服务有关的个人或内部业务用途。你仅可为安装和备份目的制作合理数量的副本。
+
+2. Restrictions
+Except as expressly permitted by this License, you may not:
+(a) sell, resell, rent, lease, sublicense, distribute, publish, or otherwise make this Skill or its installation package available to any third party;
+(b) copy, modify, adapt, translate, repackage, or create derivative works from this Skill;
+(c) remove, obscure, or alter any copyright, trademark, attribution, or license notice;
+(d) represent a modified or redistributed copy as an official TokenHubTop product; or
+(e) use this Skill in a way that violates applicable law or TokenHubTop's applicable terms of service.
+
+限制：除本许可明确允许外，你不得：
+（a）出售、转售、出租、租赁、再许可、分发、发布或以其他方式向第三方提供本 Skill 或其安装包；
+（b）复制、修改、改编、翻译、重新打包本 Skill，或基于本 Skill 创建衍生作品；
+（c）删除、遮挡或更改任何版权、商标、署名或许可声明；
+（d）将修改版或再分发版本冒充为 TokenHubTop 官方产品；
+（e）以违反适用法律或 TokenHubTop 适用服务条款的方式使用本 Skill。
+
+To the maximum extent permitted by applicable law, you must obtain TokenHubTop's prior written permission for any use not expressly granted by this License.
+
+在适用法律允许的最大范围内，任何本许可未明确授予的使用，均须事先取得 TokenHubTop 的书面许可。
+
+3. Ownership
+SEASKY INTELLIGENT TECH (HK) LIMITED (operating as TokenHubTop) and its licensors retain all right, title, and interest in and to this Skill, its installation package, documentation, trademarks, and related intellectual property. No rights are granted except those expressly stated in this License. This License is not an open-source license.
+
+所有权：TokenHubTop 及其许可方保留本 Skill、安装包、文档、商标及相关知识产权的一切权利、所有权和权益。除本许可明确规定外，不授予任何其他权利。本许可不是开源许可。
+
+4. Third-Party Services
+This Skill may interoperate with third-party models, APIs, runtimes, or services. TokenHubTop does not grant any rights to those third-party materials, and their terms may apply separately.
+
+第三方服务：本 Skill 可能与第三方模型、API、运行时或服务交互。TokenHubTop 不授予任何与这些第三方材料有关的权利，其条款可能单独适用。
+
+5. Disclaimer and Limitation of Liability
+THIS SKILL AND ITS INSTALLATION PACKAGE ARE PROVIDED "AS IS" AND "AS AVAILABLE," WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, TOKENHUBTOP WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR FOR ANY LOSS OF DATA, PROFITS, REVENUE, OR BUSINESS OPPORTUNITY, ARISING FROM OR RELATED TO YOUR USE OF THIS SKILL.
+
+免责声明与责任限制：本 Skill 及其安装包按“现状”和“可用”状态提供，不附带任何明示、默示或法定保证。在适用法律允许的最大范围内，TokenHubTop 不对因你使用本 Skill 而产生的任何间接、附带、特殊、后果性或惩罚性损害，或任何数据、利润、收入或商业机会损失承担责任。
+
+6. Termination
+This License terminates automatically if you breach any of its terms. Upon termination, you must stop using the Skill and delete all copies in your possession or control, except where retention is required by applicable law.
+
+终止：如你违反本许可任何条款，本许可自动终止。终止后，你应停止使用本 Skill，并删除你持有或控制的所有副本，但适用法律要求保留的除外。
+
+7. Contact
+Official website: https://tokenhubtop.com
+Official repository: https://github.com/TokenHubTop/tokenhubtop-video-generator
+
+联系方式：如对本许可有疑问，请通过 TokenHubTop 官方渠道联系我们。

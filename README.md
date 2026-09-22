@@ -1,5 +1,7 @@
 # TokenHubTop AI Video Generator
 
+> Copyright © 2026 SEASKY INTELLIGENT TECH (HK) LIMITED (TokenHubTop). All rights reserved. 商业使用与再分发受 [LICENSE](LICENSE) 约束。
+
 Generate AI videos from text and reference media through TokenHubTop, with request previews, task tracking, and downloads.
 
 通过 TokenHubTop 生成 AI 视频，支持文字、图片、首尾帧和音视频参考。
@@ -93,3 +95,9 @@ Each generation task produces a separate video asset. For a multi-shot project, 
 每个生成任务输出独立视频。制作多镜头作品时，可下载各段素材，在常用剪辑软件中组合成片。
 
 [Website / 官网](https://tokenhubtop.com/) · [API docs / 接口文档](https://tokenhubtop.com/zh/docs/api/ai-model/videos/createvideogeneration)
+
+## License / 许可
+
+This Skill and its installation package are governed by the [TokenHubTop AI Video Generator Proprietary License](LICENSE).
+
+本 Skill 及其安装包适用 [TokenHubTop AI Video Generator 商业许可](LICENSE)。未经书面许可，不得转售、重新发布或向第三方分发。

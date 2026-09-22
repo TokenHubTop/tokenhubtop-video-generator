@@ -47,3 +47,7 @@ queued、in_progress 为处理中；completed 才可下载；failed 为远端失
 独占记录阻止相同镜头意外重复提交，不代表服务端具备幂等性。程序不绕过平台权限，不声称自动下载已验证所有公网安全条件；如在不可信多租户服务运行，应另设网络隔离和域名准入。
 
 本版本仅覆盖上述转换接口，未承诺其他厂商原生接口通用兼容，也未接入技能市场的代收款能力。
+
+## 版权
+
+Copyright © 2026 SEASKY INTELLIGENT TECH (HK) LIMITED (TokenHubTop). All rights reserved. 本文件随 TokenHubTop AI Video Generator 一同授权，详见 [LICENSE](../LICENSE)。

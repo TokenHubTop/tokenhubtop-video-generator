@@ -1,3 +1,6 @@
+// Copyright © 2026 SEASKY INTELLIGENT TECH (HK) LIMITED (TokenHubTop). All rights reserved.
+// Licensed under the TokenHubTop AI Video Generator Proprietary License. See LICENSE.
+
 import { readFile, writeFile, mkdir, rename, unlink } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 import { createHash, randomUUID } from 'node:crypto';
