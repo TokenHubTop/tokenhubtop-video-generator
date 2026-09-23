@@ -1,0 +1,179 @@
+{
+  "schema_version": "1",
+  "capabilities": [
+    "video-generation",
+    "task-query-download",
+    "public-url-guard"
+  ],
+  "dependencies": [
+    {
+      "id": "tokenhubtop-video-service",
+      "type": "api",
+      "required": true,
+      "auth_type": "none",
+      "capabilities": [
+        "video-generation",
+        "task-query-download",
+        "public-url-guard"
+      ],
+      "checks": [
+        {
+          "id": "tokenhubtop-reachable",
+          "type": "url",
+          "required": true,
+          "url": "https://tokenhubtop.com/",
+          "method": "HEAD",
+          "expected_status": [200, 301, 302, 303, 307, 308]
+        }
+      ],
+      "setup": {
+        "official_home_url": "https://tokenhubtop.com/",
+        "official_docs_url": "https://tokenhubtop.com/zh/docs/api/ai-model/videos/createvideogeneration",
+        "login_url": "https://tokenhubtop.com/",
+        "credential_url": "https://tokenhubtop.com/console",
+        "console_path": "登录后进入控制台，在 API Key / API 密钥相关页面创建密钥，并确认模型权限与额度",
+        "credential_storage": "不落盘：用户在当前运行环境设置 TOKENHUBTOP_API_KEY；密钥不写入会话对话、命令参数、项目文件、任务记录、日志或仓库",
+        "steps": [
+          "访问 https://tokenhubtop.com/ 注册或登录",
+          "进入控制台并创建 API Key",
+          "确认账号有可用视频模型和足够额度",
+          "在当前运行环境安全配置 TOKENHUBTOP_API_KEY，然后运行只读环境检查"
+        ],
+        "verify": "已有任务记录时使用 sync 做只读查询；返回任务 JSON 说明 Key 至少具备相应读取权限，401/403 表示 Key 或权限异常",
+        "rotate_or_revoke": "轮换：控制台创建新 Key 并更新运行环境变量，确认新 Key 可用后撤销旧 Key；撤销：在控制台禁用或删除对应 Key",
+        "security": "环境检查不读取或发送 API Key；密钥不应出现在对话、命令历史、项目文件、任务记录、日志或 Git 仓库",
+        "verified_at": "2026-09-23",
+        "applies_to_version": "TokenHubTop AI Video Generator 1.0.2"
+      },
+      "degradation": [
+        {
+          "capability": "video-generation",
+          "trigger": "创建任务接口不可达、超时、鉴权失败或返回 5xx",
+          "fallback": "停止生成，保留项目与参数并展示平台错误；不在不确定状态下自动重发",
+          "user_input": "有效的 TOKENHUBTOP_API_KEY、可用模型与足够额度",
+          "limitations": "不产出占位视频，不猜测模型权限或费用",
+          "evidence_label": "未验证",
+          "recovery": "修复网络、Key、权限或额度后，由用户明确重新执行 render",
+          "stop_condition": "持续失败且用户放弃重试时终止"
+        },
+        {
+          "capability": "task-query-download",
+          "trigger": "查询接口失败或自动下载失败",
+          "fallback": "输出任务 ID、当前状态、成片 URL 和手动保存指引",
+          "user_input": "",
+          "limitations": "结果未自动落盘，仍需用户手动保存",
+          "evidence_label": "部分验证",
+          "recovery": "稍后重试 sync 或 collect",
+          "stop_condition": "成片 URL 已过期且用户无法重新生成时终止"
+        },
+        {
+          "capability": "public-url-guard",
+          "trigger": "素材不是公网 HTTP(S) URL，或 asset 引用格式无效",
+          "fallback": "拒绝提交，提示改用用户可访问的素材地址或已有有效 asset 引用",
+          "user_input": "合规且有权使用的素材地址",
+          "limitations": "不上传素材，不猜测 asset ID，不代办素材身份核验",
+          "evidence_label": "已验证",
+          "recovery": "用户提供合规素材地址后重新执行 plan 与 render",
+          "stop_condition": "用户坚持使用不合规地址或无法证明素材权利时停止"
+        }
+      ]
+    },
+    {
+      "id": "node-runtime",
+      "type": "runtime",
+      "required": true,
+      "auth_type": "none",
+      "capabilities": [
+        "video-generation",
+        "task-query-download",
+        "public-url-guard"
+      ],
+      "checks": [
+        {
+          "id": "node-version",
+          "type": "node",
+          "required": true,
+          "min_version": "22"
+        }
+      ],
+      "setup": {
+        "official_home_url": "https://nodejs.org/",
+        "official_docs_url": "https://nodejs.org/docs/latest-v22.x/api/",
+        "download_url": "https://nodejs.org/en/download",
+        "steps": [
+          "确认系统已安装 Node.js 22 或更高版本",
+          "缺失或版本过低时，从 https://nodejs.org/en/download 安装或切换版本",
+          "重新打开终端并运行 node --version 验证"
+        ],
+        "verify": "运行 node --version，确认版本不低于 v22.0.0",
+        "security": "脚本仅使用 Node.js 标准库，无 npm 第三方依赖，不写入任何凭据",
+        "verified_at": "2026-09-23",
+        "applies_to_version": "Node.js 22+"
+      },
+      "degradation": [
+        {
+          "capability": "video-generation",
+          "trigger": "Node.js 不存在或版本低于 22",
+          "fallback": "输出 project.json 请求结构和等价 HTTP 请求，供具备兼容环境的用户手动处理",
+          "user_input": "",
+          "limitations": "无法运行预检、提交、查询和下载脚本",
+          "evidence_label": "未验证",
+          "recovery": "安装 Node.js 22+ 后重新运行 check-environment.mjs",
+          "stop_condition": "用户拒绝升级时维持手动流程"
+        },
+        {
+          "capability": "task-query-download",
+          "trigger": "Node.js 不可用",
+          "fallback": "提供 GET /v1/video/generations/{task_id} 的查询说明和成片 URL 手动保存指引",
+          "user_input": "",
+          "limitations": "无法自动查询或落盘",
+          "evidence_label": "未验证",
+          "recovery": "安装 Node.js 22+ 后恢复自动流程",
+          "stop_condition": "用户拒绝安装且只能手动处理时维持降级流程"
+        },
+        {
+          "capability": "public-url-guard",
+          "trigger": "Node.js 不可用",
+          "fallback": "人工检查素材必须为公网 HTTP(S) 或用户已有有效 asset 引用",
+          "user_input": "",
+          "limitations": "没有自动地址校验",
+          "evidence_label": "推断",
+          "recovery": "安装 Node.js 22+ 后恢复脚本校验",
+          "stop_condition": "无法确认素材来源和合法性时停止提交"
+        }
+      ]
+    }
+  ],
+  "functional_degradations": [
+    {
+      "capability": "video-generation",
+      "trigger": "TokenHubTop 接口不可达、鉴权失败或生成失败",
+      "fallback": "停止生成并展示错误，附检查 Key、权限、额度、提示词和素材的建议",
+      "user_input": "",
+      "limitations": "不产出占位结果，不自动更换模型或重复创建收费任务",
+      "evidence_label": "未验证",
+      "recovery": "修复后由用户明确重新执行 render",
+      "stop_condition": "API Key 缺失且用户拒绝配置，或持续失败用户放弃重试"
+    },
+    {
+      "capability": "task-query-download",
+      "trigger": "查询或下载失败",
+      "fallback": "输出任务 ID、状态、成片 URL 与手动保存指引",
+      "user_input": "",
+      "limitations": "结果未自动落盘",
+      "evidence_label": "部分验证",
+      "recovery": "稍后重试 sync 或 collect",
+      "stop_condition": "成片 URL 过期且无法重新生成"
+    },
+    {
+      "capability": "public-url-guard",
+      "trigger": "素材地址不合规或 asset 引用无效",
+      "fallback": "脚本拒绝提交，提示改用公网 HTTP(S) URL 或已有有效 asset 引用",
+      "user_input": "有权使用的合规素材",
+      "limitations": "不自动上传、不猜测素材 ID、不核验素材权利",
+      "evidence_label": "已验证",
+      "recovery": "用户提供合规素材后重新执行 plan 与 render",
+      "stop_condition": "用户坚持使用不合规素材时停止"
+    }
+  ]
+}

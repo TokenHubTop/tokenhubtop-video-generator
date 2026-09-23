@@ -1,6 +1,6 @@
 # 镜头项目格式
 
-项目是 UTF-8 JSON。示例中的模型来自官方文档，实际使用前需确认账号支持；example.com 地址仅表示字段位置，不能当作真实素材。
+本文件对应 TokenHubTop AI Video Generator v1.0.2。项目是 UTF-8 JSON。示例中的模型来自官方文档，实际使用前需确认账号支持；example.com 地址仅表示字段位置，不能当作真实素材。
 
 ```json
 {
@@ -28,7 +28,7 @@ seconds 为 4–15 的整数或 -1。frame.aspect 为正整数比，例如 16:9�
 
 ## 与官方接口的关系
 
-以 2026-09-21 获取的 TokenHubTop 文档为依据：
+以 2026-09-23 核验的 TokenHubTop 文档为依据：
 
 - [创建视频任务](https://tokenhubtop.com/zh/docs/api/ai-model/videos/createvideogeneration)
 - [读取任务结果](https://tokenhubtop.com/zh/docs/api/ai-model/videos/getvideogeneration)
